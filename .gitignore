@@ -11,12 +11,5 @@ out/
 *.ipr
 *.iws
 
-# Eclipse project files
-.settings/
-bin/
-tmp/
-.metadata
-.project
-
 # Starter project files
 bot-token.txt
