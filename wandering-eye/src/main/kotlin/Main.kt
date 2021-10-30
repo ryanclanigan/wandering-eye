@@ -3,6 +3,7 @@ package com.wandering
 import com.jessecorbett.diskord.bot.bot
 import com.jessecorbett.diskord.bot.classicCommands
 import com.wandering.card.checkers.starcity.StarCityCardChecker
+import java.io.File
 
 
 /*
@@ -14,10 +15,14 @@ import com.wandering.card.checkers.starcity.StarCityCardChecker
 private val BOT_TOKEN = try {
     ClassLoader.getSystemResource("bot-token.txt").readText().trim()
 } catch (error: Exception) {
-    throw RuntimeException(
-        "Failed to load bot token. Make sure to create a file named bot-token.txt in" +
-                " src/main/resources and paste the bot token into that file.", error
-    )
+    try {
+        File("/home/ubuntu/bot-token.txt").readText()
+    } catch (error: Exception) {
+        throw RuntimeException(
+            "Failed to load bot token. Make sure to create a file named bot-token.txt in" +
+                    " src/main/resources and paste the bot token into that file.", error
+        )
+    }
 }
 
 suspend
