@@ -34,6 +34,10 @@ fun main() {
             command("jim") { message ->
                 message.respond("jom")
             }
+
+            command("Who to kick?") { message ->
+                message.respond("Ross")
+            }
         }
     }
 }
